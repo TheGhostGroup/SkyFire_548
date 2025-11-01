@@ -23,7 +23,12 @@ message("")
 # Show infomation about the options selected during configuration
 
 if( SERVERS )
-  message("* Build world/auth       : Yes (default)")
+  message("* Build worldserver      : Yes (default)")
+  if (AUTH_SERVER)
+  message("* Build authserver       : Yes (default)")
+  else()
+  message("* Build authserver       : No")
+  endif()
 else()
   message("* Build world/authserver : No")
 endif()
